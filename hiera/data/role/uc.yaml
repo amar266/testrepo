@@ -1,0 +1,9 @@
+rjil::jiocloud::consul_role: bootstrapserver
+rjil::system::ntp::server: true
+ntp::servers:
+  - pool.ntp.org
+
+apache::default_vhost: false
+rjil::glance::backend: file
+
+nova::api::neutron_metadata_proxy_shared_secret: false

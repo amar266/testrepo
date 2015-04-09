@@ -1,0 +1,15 @@
+---
+:backends:
+  - array_lookup
+  - yaml
+:yaml:
+  :datadir: /etc/puppet/hiera/data
+:hierarchy:
+  - "clientcert/%{::clientcert}"
+  - "secrets/%{env}"
+  - "role/%{jiocloud_role}"
+  - "hw/%{cloud_provider}/%{productname}"
+  - "cloud_provider/%{cloud_provider}"
+  - "env/%{env}"
+  - "secrets/common"
+  - common
