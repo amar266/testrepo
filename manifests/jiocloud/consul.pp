@@ -7,6 +7,11 @@ class rjil::jiocloud::consul($config_hash) {
     ensure  => present,
     content => 'server=/consul/127.0.0.1#8600',
   }
+  
+  dnsmasq::conf { 'google':
+    ensure  => present,
+    content => 'server=8.8.4.4',
+  }
 
   class { '::consul':
     install_method => 'package',
